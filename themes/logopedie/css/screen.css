@@ -1,0 +1,391 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/********************/
+
+@font-face {
+    font-family: 'EBGaramondRegular';
+    src: url('../ebt/EBGaramond-webfont.eot');
+    src: url('../ebt/EBGaramond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../ebt/EBGaramond-webfont.woff') format('woff'),
+         url('../ebt/EBGaramond-webfont.ttf') format('truetype'),
+         url('../ebt/EBGaramond-webfont.svg#EBGaramondRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'EBGaramondSC';
+    src: url('../ebt/EBGaramondSC-webfont.eot');
+    src: url('../ebt/EBGaramondSC-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../ebt/EBGaramondSC-webfont.woff') format('woff'),
+         url('../ebt/EBGaramondSC-webfont.ttf') format('truetype'),
+         url('../ebt/EBGaramondSC-webfont.svg#EBGaramondSC') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'CaviarDreamsItalic';
+    src: url('CaviarDreams_Italic-webfont.eot');
+    src: url('CaviarDreams_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('CaviarDreams_Italic-webfont.woff') format('woff'),
+         url('CaviarDreams_Italic-webfont.ttf') format('truetype'),
+         url('CaviarDreams_Italic-webfont.svg#CaviarDreamsItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsBoldItalic';
+    src: url('../Caviar-Dreams/CaviarDreams_BoldItalic-webfont.eot');
+    src: url('../Caviar-Dreams/CaviarDreams_BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Caviar-Dreams/CaviarDreams_BoldItalic-webfont.woff') format('woff'),
+         url('../Caviar-Dreams/CaviarDreams_BoldItalic-webfont.ttf') format('truetype'),
+         url('../Caviar-Dreams/CaviarDreams_BoldItalic-webfont.svg#CaviarDreamsBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsRegular';
+    src: url('../Caviar-Dreams/CaviarDreams-webfont.eot');
+    src: url('../Caviar-Dreams/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Caviar-Dreams/CaviarDreams-webfont.woff') format('woff'),
+         url('../Caviar-Dreams/CaviarDreams-webfont.ttf') format('truetype'),
+         url('../Caviar-Dreams/CaviarDreams-webfont.svg#CaviarDreamsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsBold';
+    src: url('../Caviar-Dreams/Caviar_Dreams_Bold-webfont.eot');
+    src: url('../Caviar-Dreams/Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Caviar-Dreams/Caviar_Dreams_Bold-webfont.woff') format('woff'),
+         url('../Caviar-Dreams/Caviar_Dreams_Bold-webfont.ttf') format('truetype'),
+         url('../Caviar-Dreams/Caviar_Dreams_Bold-webfont.svg#CaviarDreamsBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Règles générales*/
+
+body{
+	font-family: 'EBGaramondRegular';
+	font-size:18px;
+	border-top: solid 40px  #bf2c47;
+	margin:auto;
+	
+	
+}
+
+a{
+	text-decoration:none;
+	color:#6B6B6C;
+}
+
+a:hover{
+	color:#bf2c47;
+}
+
+em{
+	color:black;
+}
+
+h1
+{
+	font-family: 'CaviarDreamsBold';
+	font-size:24px;
+	margin-bottom:22px;
+	color:#BF2C47;
+}
+
+.bigTitle{
+	color:#5c5c5d;
+	font-family: 'CaviarDreamsBold';
+	font-size:30px;
+	text-align:center;
+	padding-top:45px;
+	padding-bottom:35px;
+
+}
+
+img{
+	text-align:center;
+}
+
+
+h2 a, h2{
+font-family: 'CaviarDreamsBold';
+color:#bf2c47;
+}
+
+h2 a:hover{
+color:#6b6b6c;
+}
+h2{	
+margin-bottom:10px;
+}
+
+#containerNav{
+	border-top: solid 5px  #8a8a8a;
+	border-bottom: solid 5px  #8a8a8a;
+	background-color:#bdbdbf;
+}
+
+nav{
+	text-align:center;
+	width:1200px;
+	margin:auto;
+}
+nav ul li{
+	display:inline;
+	
+}
+nav ul {
+	width:1200px;
+	padding-left:20px;
+}
+
+nav ul li a{
+	font-family: 'CaviarDreamsBold';
+	color:#6b6b6c;
+	display:inline-block;
+	padding:20px;
+	text-decoration:none;
+}
+
+nav ul li a:hover{
+	background-color:#D9D9DA;
+}
+
+#content{
+	background-color:#ececed;
+	width:1200px;
+	margin:auto;
+	position:relative;
+
+}
+#description{
+	color:#5c5c5d;
+	width:45%;
+	min-width:200px;
+	position:absolute;
+	left:76px;
+	margin-top:40px;
+	margin-bottom:40px;
+	line-height:1.4em;
+	
+}
+
+.listHome{
+background-color:white;
+display:inline-block;
+padding:10px;
+padding-left:20px;
+text-align:left;
+margin:30px;
+width:290px;
+border-radius:15px;
+-moz-border-radius:15px;
+border-bottom: solid 2px  #8a8a8a;
+}
+
+#list{
+text-align:center;
+clear:both;
+}
+
+.listHome ul li{
+	margin-bottom:10px;
+}
+#recherche{
+	background-color:#bdbdbf;
+	width:360px;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	border-bottom: solid 2px   #8a8a8a;
+	padding:10px;
+	float:right;
+	margin-top:40px;
+	margin-right:55px;
+	margin-bottom:40px;
+}
+
+#recherche>input:first-child{
+	width:230px;
+	margin-left:12px;
+	margin-right:12px;
+	display:inline-block;
+}
+
+#rech{
+	background: #ba4458; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ba4458 52%, #bf2c47 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(52%,#ba4458), color-stop(100%,#bf2c47)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ba4458 52%,#bf2c47 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ba4458 52%,#bf2c47 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ba4458 52%,#bf2c47 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ba4458 52%,#bf2c47 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba4458', endColorstr='#bf2c47',GradientType=0 ); /* IE6-9 */
+
+	color:white;
+	display:inline-block;
+	width:100px;
+	padding:5px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	border:0px solid black;
+	font-size:14px;
+	cursor:pointer;
+}
+
+#rech:hover{
+	background: #c12e4e; /* Old browsers */
+	background: -moz-linear-gradient(top,  #c12e4e 51%, #bc203a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(51%,#c12e4e), color-stop(100%,#bc203a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #c12e4e 51%,#bc203a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #c12e4e 51%,#bc203a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #c12e4e 51%,#bc203a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #c12e4e 51%,#bc203a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c12e4e', endColorstr='#bc203a',GradientType=0 ); /* IE6-9 */
+
+}
+
+#logo{
+	position:absolute;
+	margin-top:-40px;
+	margin-left:30px;
+}
+#imgHome{
+margin-left:-10px;
+}
+
+/* Footer */
+
+footer{
+	background-color:#bf2c47;
+	width:100%
+}
+
+.containerContact{
+
+	width:1120px;
+	margin:auto;
+	padding:20px;
+	padding-left:83px;
+	color:white;
+	line-height:110%;
+}
+
+	.containerContact h2
+	{
+	font-family: 'CaviarDreamsBold';
+	padding-bottom: 10px;
+	font-size:22px;
+	color:white;
+	}
+	
+	.containerContact h3
+	{
+	font-family: 'CaviarDreamsBold';
+	padding-bottom:8px;
+	font-size:18px;
+	}
+		
+	.containerContact a{
+	font-weight:bold;
+	color:white;
+	}
+	
+	.containerContact a:hover{
+	text-decoration:underline;
+	}
+	
+.caseContact
+{
+vertical-align:top;
+display:inline-block;
+width:20%;
+margin-right:7%;
+}
+
+#premiereCase{
+width:25%;
+}
+
+/*Page Contact*/
+
+#contentContact
+{
+left:70px;
+line-height:110%;
+position:relative;
+padding-top:40px;
+}
+
+	#contentContact p
+	{
+	margin-bottom:10px;
+	}
+	
+	#contentContact h2+p
+	{
+	margin-bottom:15px;
+	}
+	
+	#contentContact h2+p+p+h2
+	{
+	position:relative;
+	top:12px;
+	margin-bottom:22px;
+	}
+

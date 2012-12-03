@@ -1,0 +1,16 @@
+name = Unité Logopédie de la Voix
+description = Thème réalisé pour l'unité de logopédie de la voix (version rose)
+version = VERSION
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/screen.css
+
+regions[page_top] = Haut de page
+regions[page_bottom] = Bas de page
+
+regions[content] = Contenu
+regions[menu] = Menu principal
+regions[help] = Aide
+
+regions[footer] = Pied de page
+
