@@ -5,6 +5,9 @@ core = 7.x
 engine = phptemplate
 stylesheets[all][] = css/screen.css
 
+scripts[] = js/script.js
+scripts[] = js/jquery.js
+
 regions[page_top] = Haut de page
 regions[page_bottom] = Bas de page
 
