@@ -1,5 +1,7 @@
         <header>
-			<img src="<?php print $logo ?>" alt="logo" id="logo"/>
+			<div id="logoBackground">
+				<img src="<?php print $logo ?>" alt="logo" id="logo"/>
+			</div>
 			  
 			 <div id="containerNav">
 				<nav>

@@ -1,0 +1,196 @@
+<?php
+/**
+ * @file
+ * Foem Maker module install/schema hooks.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function form_maker_schema() {
+  $schema['form_maker_table'] = array(
+    'description' => 'The table for Form Maker.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'vid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'mail' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default_value' => '',
+      ),
+      'form' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'css' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'javascript' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'script1' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'script2' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'data' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'counter' => array(
+        'type' => 'int',
+        'length' => 16,
+        'not null' => TRUE,
+      ),
+      'article_id' => array(
+        'type' => 'int',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'label_order' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'redirect_url' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  $schema['form_maker_submits_table'] = array(
+    'description' => 'The table for Form Maker submits.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'form_id' => array(
+        'type' => 'int',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'element_label' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'element_value' => array(
+        'type' => 'varchar',
+        'length' => 600,
+        'not null' => TRUE,
+      ),
+      'group_id' => array(
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE,
+      ),
+      'date' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'ip' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  $schema['form_maker_captcha_table'] = array(
+    'description' => 'The table for Captcha.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'captcha' => array(
+        'type' => 'varchar',
+        'length' => 18,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function form_maker_install() {
+  // Optionally create the default form_maker type.
+  if (variable_get('form_maker_install_create_content_type', TRUE)) {
+    $form_maker_type = array(
+      'type' => 'form_maker',
+      'name' => 'Form',
+      'base' => 'node_content',
+      'description' => 'Create a new form with Form Maker module.',
+      'custom' => TRUE,
+      'modified' => TRUE,
+      'locked' => FALSE,
+    );
+    $form_maker_type = node_type_set_defaults($form_maker_type);
+    node_type_save($form_maker_type);
+    node_add_body_field($form_maker_type);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function form_maker_uninstall() {
+  variable_del('form_maker_node_types');
+  variable_del('form_maker_node_types_primary');
+  // Delete form_maker node from NODE TABLE.
+  db_query('DELETE FROM {node} WHERE type= :type', array(':type' => 'form_maker'));
+  drupal_uninstall_schema('form_maker');
+}
+
+/**
+ * Implements hook_disable().
+ */
+function form_maker_disable() {
+  $num_updated = db_update('node_type')->fields(
+    array(
+      'disabled' => 1,
+    )
+  )
+  ->condition('type', 'form_maker', '=')
+  ->execute();
+}

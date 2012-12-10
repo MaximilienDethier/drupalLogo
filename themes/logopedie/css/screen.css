@@ -177,7 +177,8 @@ nav ul li a{
 	
 	min-height: 100%;
 	height: auto;
-	margin: 0 auto -4em;
+	margin: 0 auto;
+	padding-bottom:30px;
 
 }
 #description{
@@ -281,7 +282,6 @@ footer{
 	background-color:#bf2c47;
 	width:100%;
 	font-size:19px;
-	margin-top:60px;
 }
 
 .containerContact{
@@ -524,4 +524,12 @@ margin-bottom:30px;
 	margin-bottom:10px;
 	margin-top:10px;
 	width:250px;	
+}
+
+/* Recherche */
+
+#worldMap
+{
+width:600px;
+height:400px;
 }
